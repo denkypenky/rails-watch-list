@@ -1,5 +1,7 @@
-<div class="container-fluid bg-image">
-<p class="text-lg-end front-p">Enter your personal <br><%= link_to lists_path, class: "btn-lg btn btn-outline-secondary" do %>
-  MoviePedia
-<% end %>
+<div class="container-fluid" style="background-image: url(<%= cl_image_path("photo-1478720568477-152d9b164e26_x5uoox") %>);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+height: 800px;">
+  <p class="text-lg-end front-p">Enter your personal<br><%= link_to "MoviePedia", lists_path, class: "btn-lg btn btn-outline-secondary" %></p>
 </div>

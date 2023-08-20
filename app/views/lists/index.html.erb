@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" >
   <div class="container-fluid grid gap-3">
     <%= link_to root_path do %>
       <i class="fa-solid fa-film" style="color: #818d8b;"></i>
@@ -20,7 +20,8 @@
   </div>
 </nav>
 
-  <div class="px-5 py-2 second-banner"><h3 class="text-center text-banner">Welcome to your personal MoviePedia:</h3>
+<div class="px-5 py-2" style="background-repeat: no-repeat; background-size: cover; background-position: center center; height: 300px; background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.5)), url(<%= cl_image_path('photo-1598899134739-24c46f58b8c0_1_mbj8gz') %>);">
+  <h3 class="text-center text-banner">Welcome to your personal MoviePedia:</h3>
   <h1 class="text-center text-banner">Your library</h1>
 </div>
 
@@ -28,7 +29,7 @@
   <div class="row mt-5">
     <% @lists.each do |l| %>
       <div class="col-4">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1585647347384-2593bc35786b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80')">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(<%= cl_image_path('photo-1585647347384-2593bc35786b_l3uzcu') %>)">
           <%= link_to l.name, list_path(l), style: "color: white;" %>
           <%= link_to "+", list_path(l), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "card-remove-link" %>
         </div>
