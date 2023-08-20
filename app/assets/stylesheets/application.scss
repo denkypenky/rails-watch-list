@@ -10,3 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;;
+}

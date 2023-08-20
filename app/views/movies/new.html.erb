@@ -1,0 +1,7 @@
+<div class="container">
+<h1>Search new movie for /h1>
+<%= simple_form_for (@bookmark) do |f| %>
+  <%= f.input :title, collection: movie.pluck(:title) %>
+  <%= f.submit "Add Tag", class: "btn btn-secondary" %>
+<% end %>
+</div>

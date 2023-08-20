@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.bg-image {
+  background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 700px;
+}
+
+.front-p {
+  padding-right: 250px;
+  padding-top: 350px;
+  color: black;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}

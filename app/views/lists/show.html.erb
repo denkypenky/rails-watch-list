@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid grid gap-3">
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-film" style="color: #818d8b;"></i>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "home", lists_path %>
+        </li>
+      </ul>
+      <form class="d-flex grid gap-3 px-2">
+        <%= link_to "My lists", lists_path %>
+        <%= link_to "New list", new_list_path %>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="banner list-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1634157703702-3c124b455499?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1828&q=80');">
+  <div class="container special-text">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
+
+<div class="container"></div>
+  <div class="row mt-5">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="col-4">
+        <div class="card-category list-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bookmark.movie.poster_url %>')">
+          <%= bookmark.movie.title%>
+          <%= link_to "+", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "card-remove-link"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="d-flex justify-content-center" style="padding-right: 110px; padding-top: 20px">
+<%= link_to   new_list_bookmark_path(@list) do %>
+  <span type="button" class="btn btn-outline-warning">Add new movie</span>
+<% end %>
+</div>
+
+
+<div class="container mt-5 mb-5">
+  <%= link_to "Edit this list", edit_list_path(@list), class: "text-decoration-none text-secondary" %> |
+  <%= link_to "Back to list", lists_path, class: "text-decoration-none text-secondary" %>
+
+  <%= button_to "Destroy this list", @list, method: :delete, class: "btn btn-secondary mt-3" %>
+</div>
